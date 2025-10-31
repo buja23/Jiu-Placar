@@ -41,19 +41,12 @@ export const Timer = () => {
   };
 
   return (
-    <div className="bg-card rounded-xl p-4 border border-border shadow-elegant">
-      <div className="flex items-center justify-between gap-4">
-        {/* Timer Display */}
-        <div className="flex-1 text-center">
-          <p className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wider">
-            Cronômetro
-          </p>
-          <div className={`timer-display ${timeInSeconds <= 10 && timeInSeconds > 0 ? 'text-destructive animate-pulse' : ''}`}>
-            {formatTime(timeInSeconds)}
-          </div>
-        </div>
-
-        {/* Controls */}
+    // Adicionado 'relative' para o posicionamento correto do pop-up de configurações
+    <div className="bg-card rounded-xl p-4 border border-border shadow-elegant relative">
+      {/* Alterado de 'flex items-center justify-between' para 'flex flex-col items-center' */}
+      <div className="flex flex-col items-center gap-4">
+        
+        {/* Controls (AGORA EM CIMA) */}
         <div className="flex items-center gap-2">
           <Button
             size="sm"
@@ -90,6 +83,18 @@ export const Timer = () => {
           </Button>
         </div>
 
+        {/* Timer Display (AGORA EM BAIXO) */}
+        
+        {/* Removido 'flex-1' para centralizar corretamente na coluna */}
+        <div className="text-center">
+          {/* MUDANÇA AQUI: 
+            Removi "timer-display" e adicionei classes de tamanho e sombra.
+          */}
+          <div className={`text-7xl md:text-8xl font-black tracking-tight drop-shadow-lg ${timeInSeconds <= 10 && timeInSeconds > 0 ? 'text-destructive animate-pulse' : ''}`}>
+            {formatTime(timeInSeconds)}
+          </div>
+        </div>
+
         {/* Time Settings */}
         {showSettings && (
           <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-card rounded-xl p-3 border border-border shadow-elegant z-10">
@@ -116,3 +121,4 @@ export const Timer = () => {
     </div>
   );
 };
+

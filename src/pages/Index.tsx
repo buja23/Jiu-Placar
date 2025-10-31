@@ -92,9 +92,9 @@ const Index = () => {
         {/* Header */}
         <div className="text-center mb-3">
           <h1 className="text-2xl md:text-3xl font-black tracking-tight mb-1">
-            Placar Digital Jiu-Jitsu
+           Campeonato Interno Jiu jitsu
           </h1>
-          <p className="text-xs text-muted-foreground">Sistema Profissional de Pontuação</p>
+          <p className="text-xs text-muted-foreground">Nilson Nunes</p>
         </div>
 
         {/* Timer Section */}
