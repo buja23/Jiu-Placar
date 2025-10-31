@@ -41,11 +41,11 @@ export const Timer = () => {
   };
 
   return (
-    <div className="bg-card rounded-2xl p-8 border border-border shadow-elegant">
-      <div className="flex flex-col items-center gap-6">
+    <div className="bg-card rounded-xl p-4 border border-border shadow-elegant">
+      <div className="flex items-center justify-between gap-4">
         {/* Timer Display */}
-        <div className="text-center">
-          <p className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">
+        <div className="flex-1 text-center">
+          <p className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wider">
             Cronômetro
           </p>
           <div className={`timer-display ${timeInSeconds <= 10 && timeInSeconds > 0 ? 'text-destructive animate-pulse' : ''}`}>
@@ -54,46 +54,46 @@ export const Timer = () => {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <Button
-            size="lg"
+            size="sm"
             onClick={() => setIsRunning(!isRunning)}
-            className={`rounded-full h-16 w-16 ${
+            className={`rounded-full h-12 w-12 ${
               isRunning 
                 ? "bg-destructive hover:bg-destructive/90" 
                 : "athlete-blue-bg hover:opacity-90"
             }`}
           >
             {isRunning ? (
-              <Pause className="h-8 w-8" />
+              <Pause className="h-5 w-5" />
             ) : (
-              <Play className="h-8 w-8 ml-1" />
+              <Play className="h-5 w-5 ml-0.5" />
             )}
           </Button>
 
           <Button
-            size="lg"
+            size="sm"
             variant="outline"
             onClick={handleReset}
-            className="rounded-full h-16 w-16"
+            className="rounded-full h-12 w-12"
           >
-            <RotateCcw className="h-6 w-6" />
+            <RotateCcw className="h-5 w-5" />
           </Button>
 
           <Button
-            size="lg"
+            size="sm"
             variant="outline"
             onClick={() => setShowSettings(!showSettings)}
-            className="rounded-full h-16 w-16"
+            className="rounded-full h-12 w-12"
           >
-            <Settings className="h-6 w-6" />
+            <Settings className="h-5 w-5" />
           </Button>
         </div>
 
         {/* Time Settings */}
         {showSettings && (
-          <div className="w-full max-w-xs bg-secondary/50 rounded-xl p-4 border border-border backdrop-blur-sm">
-            <label className="text-sm font-semibold text-foreground mb-2 block">
+          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-card rounded-xl p-3 border border-border shadow-elegant z-10">
+            <label className="text-xs font-semibold text-foreground mb-2 block">
               Definir Tempo (minutos)
             </label>
             <div className="flex gap-2">
@@ -103,10 +103,10 @@ export const Timer = () => {
                 max="60"
                 value={inputMinutes}
                 onChange={(e) => setInputMinutes(e.target.value)}
-                className="flex-1"
+                className="flex-1 h-9"
                 placeholder="5"
               />
-              <Button onClick={handleSetTime} className="athlete-blue-bg">
+              <Button onClick={handleSetTime} className="athlete-blue-bg h-9">
                 Aplicar
               </Button>
             </div>

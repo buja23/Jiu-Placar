@@ -87,23 +87,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/95 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="h-screen bg-gradient-to-b from-background to-background/95 p-3 overflow-hidden flex flex-col">
+      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-2">
+        <div className="text-center mb-3">
+          <h1 className="text-2xl md:text-3xl font-black tracking-tight mb-1">
             Placar Digital Jiu-Jitsu
           </h1>
-          <p className="text-muted-foreground">Sistema Profissional de Pontuação</p>
+          <p className="text-xs text-muted-foreground">Sistema Profissional de Pontuação</p>
         </div>
 
         {/* Timer Section */}
-        <div className="mb-8">
+        <div className="mb-3 relative">
           <Timer />
         </div>
 
         {/* Scores Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-2 gap-4 flex-1 overflow-auto mb-3">
           <AthleteScore
             athlete="blue"
             totalScore={blueScore.total}
@@ -137,11 +137,11 @@ const Index = () => {
         <div className="flex justify-center">
           <Button
             onClick={handleResetAll}
-            size="lg"
+            size="sm"
             variant="outline"
             className="gap-2"
           >
-            <RotateCcw className="h-5 w-5" />
+            <RotateCcw className="h-4 w-4" />
             Resetar Tudo
           </Button>
         </div>

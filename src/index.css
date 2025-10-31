@@ -98,11 +98,11 @@ All colors MUST be HSL.
 
 @layer utilities {
   .score-display {
-    @apply text-8xl md:text-9xl font-black tracking-tight;
+    @apply text-6xl md:text-7xl font-black tracking-tight;
   }
   
   .timer-display {
-    @apply text-7xl md:text-8xl font-black tracking-tight;
+    @apply text-5xl md:text-6xl font-black tracking-tight;
   }
   
   .athlete-blue-bg {
