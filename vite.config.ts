@@ -3,8 +3,13 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+// Assumindo que o nome do seu repositório no GitHub será 'jiu-placar'
+const REPO_NAME = "jiu-placar";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ADICIONADO: Define o caminho base para o deploy no GitHub Pages
+  base: `/${REPO_NAME}/`, 
   server: {
     host: "::",
     port: 8080,
