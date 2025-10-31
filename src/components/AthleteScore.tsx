@@ -86,38 +86,40 @@ export const AthleteScore = ({
       {/* Specific Points */}
       <div className="flex flex-col gap-2">
         <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wide">Pontos Específicos</h3>
-        <ScoreCounter
-          label="Montada"
-          points={4}
-          value={mount}
-          onIncrement={() => onScoreChange("mount", true)}
-          onDecrement={() => onScoreChange("mount", false)}
-          color={athlete}
-        />
-        <ScoreCounter
-          label="Passagem"
-          points={3}
-          value={guardPass}
-          onIncrement={() => onScoreChange("guardPass", true)}
-          onDecrement={() => onScoreChange("guardPass", false)}
-          color={athlete}
-        />
-        <ScoreCounter
-          label="Queda"
-          points={2}
-          value={takedown}
-          onIncrement={() => onScoreChange("takedown", true)}
-          onDecrement={() => onScoreChange("takedown", false)}
-          color={athlete}
-        />
-        <ScoreCounter
-          label="Joelho na Barriga"
-          points={2}
-          value={kneeOnBelly}
-          onIncrement={() => onScoreChange("kneeOnBelly", true)}
-          onDecrement={() => onScoreChange("kneeOnBelly", false)}
-          color={athlete}
-        />
+        <div className="grid grid-cols-2 gap-2">
+          <ScoreCounter
+            label="Montada"
+            points={4}
+            value={mount}
+            onIncrement={() => onScoreChange("mount", true)}
+            onDecrement={() => onScoreChange("mount", false)}
+            color={athlete}
+          />
+          <ScoreCounter
+            label="Passagem"
+            points={3}
+            value={guardPass}
+            onIncrement={() => onScoreChange("guardPass", true)}
+            onDecrement={() => onScoreChange("guardPass", false)}
+            color={athlete}
+          />
+          <ScoreCounter
+            label="Queda"
+            points={2}
+            value={takedown}
+            onIncrement={() => onScoreChange("takedown", true)}
+            onDecrement={() => onScoreChange("takedown", false)}
+            color={athlete}
+          />
+          <ScoreCounter
+            label="Joelho na Barriga"
+            points={2}
+            value={kneeOnBelly}
+            onIncrement={() => onScoreChange("kneeOnBelly", true)}
+            onDecrement={() => onScoreChange("kneeOnBelly", false)}
+            color={athlete}
+          />
+        </div>
       </div>
     </div>
   );
