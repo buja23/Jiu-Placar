@@ -38,7 +38,7 @@ export const AthleteScore = ({
 
       {/* Advantage and Penalty */}
       <div className="grid grid-cols-2 gap-2">
-        <div className="bg-card rounded-lg p-2 text-center border border-border">
+        <div className="bg-card rounded-lg p-2 border border-border flex flex-col">
           <div className="flex items-center justify-between mb-1">
             <p className="text-xs font-semibold text-foreground">VANTAGEM</p>
             <div className="flex gap-0.5">
@@ -57,10 +57,10 @@ export const AthleteScore = ({
               </button>
             </div>
           </div>
-          <div className="text-2xl font-black">{advantage}</div>
+          <div className="text-2xl font-black text-center flex-1 flex items-center justify-center">{advantage}</div>
         </div>
 
-        <div className="bg-card rounded-lg p-2 text-center border border-border">
+        <div className="bg-card rounded-lg p-2 border border-border flex flex-col">
           <div className="flex items-center justify-between mb-1">
             <p className="text-xs font-semibold text-foreground">PUNIÇÃO</p>
             <div className="flex gap-0.5">
@@ -79,7 +79,7 @@ export const AthleteScore = ({
               </button>
             </div>
           </div>
-          <div className="text-2xl font-black">{penalty}</div>
+          <div className="text-2xl font-black text-center flex-1 flex items-center justify-center">{penalty}</div>
         </div>
       </div>
 
